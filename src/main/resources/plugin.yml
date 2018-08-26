@@ -1,0 +1,8 @@
+name: AntiAFKPlus
+version: 2.2.0
+author: kinglol12345
+main: de.kinglol12345.AntiAFKPlus.AntiAFKPlus
+api-version: 1.13
+
+commands:
+  antiafk:

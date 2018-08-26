@@ -1,0 +1,37 @@
+#############################################################
+# +-------------------------------------------------------+ #
+# |                     AntiAFK-Plus                      | #
+# |                   by kinglol12345                     | #
+# |       https://www.spigotmc.org/resources/21208        | #
+# +-------------------------------------------------------+ #
+#############################################################
+
+# Do not edit!
+version: 2.2.0
+
+# How often should it checks a Player (In Seconds)
+check_delay: 60
+
+# FailCheck Actions
+# Actions get performed after x amount of Checks
+# You have to change the Sounds if your server is below Version 1.9
+# Available Actions:
+#   Commands: Write the Command Placeholder: %player% player name  # Example: teleport %player% 0 0 0
+#   Sound: Full Sound Name with 'Sound.' before                    # Example: Sound.ENTITY_EXPERIENCE_ORB_PICKUP
+#   Message: Add a Message under messages and add the path         # Example: messages.warning
+actions:
+  1:
+    - messages.warning
+    - Sound.ENTITY_EXPERIENCE_ORB_PICKUP
+  2:
+    - messages.teleport
+    - spawn %player%
+    - Sound.ENTITY_ENDERMAN_TELEPORT
+  4:
+    - 'kick %player% You were kicked for being AFK'
+
+# You can ADD MESSAGES!!! Just like that
+messages:
+  warning: '&a[AntiAFK+] &cIt seems that you are afk. Please move'
+  teleport: '&a[AntiAFK+] &cYou got teleported to spawn'
+
