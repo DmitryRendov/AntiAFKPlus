@@ -1,5 +1,6 @@
 package de.kinglol12345.AntiAFKPlus.listener;
 
+import de.kinglol12345.AntiAFKPlus.AntiAFKPlus;
 import de.kinglol12345.AntiAFKPlus.AFKPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,8 +17,8 @@ public class PlayerListener implements org.bukkit.event.Listener {
     public void onMove(PlayerMoveEvent e) {
         Player p = e.getPlayer();
         if ( AFKPlayer.isAFK(p) ) {
-            if ( de.kinglol12345.AntiAFKPlus.AntiAFKPlus.players.containsKey(p) ) {
-                org.bukkit.util.Vector v = (org.bukkit.util.Vector) de.kinglol12345.AntiAFKPlus.AntiAFKPlus.players.get(p);
+            if ( AntiAFKPlus.players.containsKey(p) ) {
+                org.bukkit.util.Vector v = (org.bukkit.util.Vector) AntiAFKPlus.players.get(p);
                 if ( (!v.equals(p.getLocation().getDirection())) &&
                         (AFKPlayer.isAFK(p)) ) {
                     AFKPlayer.getPlayer(p).remove();
@@ -40,12 +41,12 @@ public class PlayerListener implements org.bukkit.event.Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        de.kinglol12345.AntiAFKPlus.AntiAFKPlus.removePlayer(p);
+        AntiAFKPlus.removePlayer(p);
     }
 
     @EventHandler
     public void onKick(PlayerKickEvent e) {
         Player p = e.getPlayer();
-        de.kinglol12345.AntiAFKPlus.AntiAFKPlus.removePlayer(p);
+        AntiAFKPlus.removePlayer(p);
     }
 }

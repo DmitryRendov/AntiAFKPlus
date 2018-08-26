@@ -1,6 +1,9 @@
 package de.kinglol12345.AntiAFKPlus.actions;
 
 import org.bukkit.entity.Player;
+import de.kinglol12345.AntiAFKPlus.actions.ActionMessage;
+import de.kinglol12345.AntiAFKPlus.actions.ActionSound;
+import de.kinglol12345.AntiAFKPlus.actions.ActionCommand;
 
 public abstract class Action {
     public Action() {

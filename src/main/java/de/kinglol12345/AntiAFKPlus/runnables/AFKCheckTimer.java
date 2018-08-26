@@ -23,7 +23,7 @@ public class AFKCheckTimer implements Runnable {
 
             if ( !AntiAFKPlus.players.containsKey(p) ) {
                 AntiAFKPlus.players.put(p, p.getLocation().getDirection());
-            } else {
+            } else  {
                 Vector v = (Vector) AntiAFKPlus.players.get(p);
                 if ( v.equals(p.getLocation().getDirection()) ) {
                     AFKPlayer.getPlayer(p).addFail();

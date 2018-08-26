@@ -1,5 +1,6 @@
 package de.kinglol12345.AntiAFKPlus.storage;
 
+import de.kinglol12345.AntiAFKPlus.AntiAFKPlus;
 import de.kinglol12345.AntiAFKPlus.actions.Action;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,7 +16,7 @@ public class DefaultConfig {
     private Plugin plugin;
 
     public DefaultConfig() {
-        plugin = de.kinglol12345.AntiAFKPlus.AntiAFKPlus.getInstance().getPlugin();
+        plugin = AntiAFKPlus.getInstance().getPlugin();
         plugin.saveDefaultConfig();
         config = plugin.getConfig();
     }
@@ -31,7 +32,7 @@ public class DefaultConfig {
 
 
             getConfig().getInt("version");
-            de.kinglol12345.AntiAFKPlus.AntiAFKPlus.CHECK_INTERVAL = getConfig().getInt("check_delay");
+            AntiAFKPlus.CHECK_INTERVAL = getConfig().getInt("check_delay");
 
 
             for (String s : getConfig().getConfigurationSection("actions").getKeys(false)) {
@@ -46,16 +47,16 @@ public class DefaultConfig {
                             actions.add(Action.initAction(f));
                         }
 
-                        de.kinglol12345.AntiAFKPlus.AntiAFKPlus.actions.put(Integer.valueOf(i), actions);
+                        AntiAFKPlus.actions.put(Integer.valueOf(i), actions);
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println("[AntiAFK+] Unvaild actions number: " + s);
+                    System.err.println("[AntiAFK+] Invaild actions number: " + s);
                 }
             }
         } catch (NullPointerException e) {
             System.err.println("[AntiAFKPlus] Incorrect config.yml! Disabling Plugin.");
             e.printStackTrace();
-            org.bukkit.Bukkit.getPluginManager().disablePlugin(de.kinglol12345.AntiAFKPlus.AntiAFKPlus.getInstance().getPlugin());
+            org.bukkit.Bukkit.getPluginManager().disablePlugin(AntiAFKPlus.getInstance().getPlugin());
         }
     }
 

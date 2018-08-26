@@ -11,7 +11,7 @@ class ActionMessage extends Action {
             msg = AntiAFKPlus.config.getConfig().getString(text);
             msg = org.bukkit.ChatColor.translateAlternateColorCodes('&', msg);
         } catch (NullPointerException e) {
-            System.err.println("[AntiAFKPlus] Unvalid message path: " + text);
+            System.err.println("[AntiAFKPlus] Invalid message path: " + text);
             msg = null;
             e.printStackTrace();
         }
