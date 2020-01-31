@@ -7,7 +7,7 @@
 #############################################################
 
 # Do not edit!
-version: 2.3.0
+version: 2.4.1
 
 # How often should it checks a Player (In Seconds)
 check_delay: 60
