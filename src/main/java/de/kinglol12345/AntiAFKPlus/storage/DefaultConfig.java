@@ -50,13 +50,13 @@ public class DefaultConfig {
                         AntiAFKPlus.actions.put(Integer.valueOf(i), actions);
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println("[AntiAFK+] Invaild actions number: " + s);
+                    System.err.println("[AntiAFK+] Invalid actions number: " + s);
                 }
             }
         } catch (NullPointerException e) {
             System.err.println("[AntiAFKPlus] Incorrect config.yml! Disabling Plugin.");
             e.printStackTrace();
-            org.bukkit.Bukkit.getPluginManager().disablePlugin(AntiAFKPlus.getInstance().getPlugin());
+            org.bukkit.Bukkit.getPluginManager().disablePlugin(plugin);
         }
     }
 
